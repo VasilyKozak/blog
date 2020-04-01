@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapperUl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapperUl li {
+  display: inline-flex;
+  border-right: 1px solid #BBB;
+}
+
+.link {
+  display: inline-flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: #111;
+}

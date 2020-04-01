@@ -1,0 +1,74 @@
+.postList {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.postWrapper {
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.postTitle {
+  background-color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.linkTitle {
+  text-decoration: none;
+  color: white;
+}
+
+.postContent {
+  padding: 10px 20px 10px;
+  margin-top: 5px;
+}
+
+.like {
+  display: inline-block;
+  color: #38fac7;
+  padding: 0px 5px;
+}
+
+.dislike {
+  color: #f80511;
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+.eye {
+  position: relative;
+  border: 2px solid #333;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 75% 15%;
+  transform: rotate(45deg);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.eye:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+
+.viewWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

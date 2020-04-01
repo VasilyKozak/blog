@@ -1,0 +1,7 @@
+.textareaComponent {
+  padding: 4px 8px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  min-height: 100px;
+}

@@ -1,0 +1,14 @@
+.postWrapper {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.postTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.postContent {
+  margin-top: 10px;
+}

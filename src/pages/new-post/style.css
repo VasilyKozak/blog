@@ -1,0 +1,14 @@
+.postFormWrapper {
+  width: 500px;
+  border: 1px solid black;
+  margin: 100px auto;
+  padding: 40px 20px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
