@@ -9,7 +9,9 @@ import signUpReducer from 'src/pages/sign-up/reduce';
 import mainReducer from 'src/pages/main/reducer';
 import postReducer from 'src/pages/post/reducer';
 import newPostReducer from 'src/pages/new-post/reducer';
+import myPageReducer from "src/pages/my-page/reducer";
 import { history } from 'src/history';
+
 
 const logger = createLogger({
   collapsed: true
@@ -24,7 +26,8 @@ const createRootReducer = (history) => combineReducers({
   signUp: signUpReducer,
   main: mainReducer,
   post: postReducer,
-  newPost: newPostReducer
+  newPost: newPostReducer,
+  myPage: myPageReducer
 });
 
 // function myMiddleware(store) {

@@ -39,3 +39,10 @@ export function checkLogin(login) {
     }
   });
 }
+
+export function getUserPage(id) {
+  return axiosFetch({
+    url: `/users/${id}`,
+    method: 'GET'
+  });
+}

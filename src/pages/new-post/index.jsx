@@ -4,7 +4,7 @@ import Input from 'src/components/input';
 import Textarea from 'src/components/textarea';
 import Button from 'src/components/button';
 import * as Actions from './actions';
-import s from './style.css';
+import style from './style.css';
 
 class NewPost extends Component {
   onChangeData = (data) => {
@@ -22,8 +22,8 @@ class NewPost extends Component {
     const { data } = this.props;
 
     return (
-      <div className={s.postFormWrapper}>
-        <div className={s.row}>
+      <div className={style.postFormWrapper}>
+        <div className={style.row}>
           <div>Заголовок</div>
           <Input
             id="title"
@@ -31,7 +31,7 @@ class NewPost extends Component {
             onChange={this.onChangeData}
           />
         </div>
-        <div className={s.row}>
+        <div className={style.row}>
           <div>Контент</div>
           <Textarea
             id="content"
@@ -39,7 +39,7 @@ class NewPost extends Component {
             onChange={this.onChangeData}
           />
         </div>
-        <div className={s.row}>
+        <div className={style.row}>
           <Button id="submit" onClick={this.onSubmit}>Создать</Button>
         </div>
       </div>
