@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Button from 'src/components/button';
 import Input from 'src/components/input';
 import * as Actions from './actions';
 import style from './style.css';
@@ -83,7 +84,7 @@ class SignUp extends Component {
           </div>
         </div>
         <div className={style.row}>
-          <button className={style.submit} onClick={this.onSubmit}>Зарегистрироваться</button>
+          <Button onClick={this.onSubmit}>Зарегистрироваться</Button>
         </div>
       </div>
     );

@@ -30,18 +30,6 @@ const createRootReducer = (history) => combineReducers({
   myPage: myPageReducer
 });
 
-// function myMiddleware(store) {
-//   return function(next) {
-//     return function(action) {
-//       if (typeof action === 'function') {
-//         action(store.dispatch, store.getState);
-//       } else {
-//         next(action);
-//       }
-//     }
-//   }
-// }
-
 const store = createStore(
   createRootReducer(history),
   applyMiddleware(routerMiddle, logger, thunk)

@@ -32,4 +32,24 @@ export const hideModalAction = () => {
     }
 };
 
+export const changeFieldAction = ({ fieldId, value }) => ({
+    type: 'CHECK_PASSWORD_DATA_FORM',
+    payload: { fieldId, value }
+});
+
+export const checkPasswordAction = (dataForm) => {
+
+    return async function(dispatch) {
+        try {
+            dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_REQUEST' });
+            const response = await API.user.getChangePassword(dataForm);
+            dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_SUCCESS', payload: response.data });
+        } catch (error) {
+            console.log(error)
+            dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_FAIL', payload: error.response.data });
+        }
+    }
+};
+
+
 

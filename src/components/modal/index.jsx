@@ -1,27 +1,25 @@
 import React, {Component} from 'react';
 import { createPortal } from 'react-dom';
-import Modal from './modal';
 
 class ModalWrapper extends Component {
   element = null;
 
   constructor(props) {
     super(props);
-
     this.element = document.createElement('div');
-    document.body.append(this.element);
+  }
+
+  componentDidMount() {
+    document.body.appendChild(this.element);
   }
 
   componentWillUnmount() {
-    this.element.remove();
+    document.body.removeChild(this.element);
   }
 
   render() {
     return (
-      createPortal(
-        <Modal {...this.props}/>,
-        this.element
-      )
+        createPortal(this.props.children, this.element)
     );
   }
 }

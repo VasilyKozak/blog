@@ -23,7 +23,6 @@ function merge(state, someObject) {
   return Object.assign(clonnedState, someObject);
 }
 
-// errorFromServer = { isRequired: true }
 function mapErrorFromServer(errorFromServer) {
   const errorCode = Object.keys(errorFromServer)[0];
 
@@ -38,10 +37,6 @@ function mapErrorFromServer(errorFromServer) {
 }
 
 function getFormErrors(payload) {
-  // {
-  //   login: { isRequired: true },
-  //   password: .///
-  // }
   const errorKeys = Object.keys(payload);
   const errors = errorKeys.reduce(function(result, errorKey) {
     const errorFromServer = payload[errorKey];
