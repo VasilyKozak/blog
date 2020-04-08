@@ -1,14 +1,82 @@
+
 .postWrapper {
   width: 500px;
-  margin: 0 auto;
-  border: 1px solid black;
+  border: 2px solid white;
+  border-radius: 6px;
+  margin: 20px auto 15px;
 }
 
 .postTitle {
+  background-color: #181818;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 18px;
   font-weight: bold;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
 }
 
 .postContent {
-  margin-top: 10px;
+  margin: 25px auto;
+  width: 450px;
+  background: #eee;
+  padding: 20px;
+  color: #181818;
+  border: 2px solid white;
+  border-radius: 6px;
+}
+
+hr {
+  width: 450px;
+}
+
+img {
+  height: 2em;
+  padding-right: 1em;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: row;
+}
+
+.like {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  color: #898989;
+  padding: 5px 10px 10px 10px;
+  align-items: center;
+}
+
+.dislike {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  color: #898989;
+  padding: 5px 10px 10px;
+  align-items: center;
+}
+
+.viewWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #898989;
+  padding: 5px 25px 10px 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  color: #898989;
 }

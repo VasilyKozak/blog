@@ -1,12 +1,15 @@
 .postFormWrapper {
   width: 500px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin: 100px auto;
   padding: 40px 20px;
+  border-radius: 6px;
 }
+
 
 .row {
   margin-bottom: 10px;
+  color: #898989;
 }
 
 .row:last-child {

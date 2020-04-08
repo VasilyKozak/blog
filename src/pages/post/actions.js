@@ -11,3 +11,27 @@ export const getPostDataAction = (id) => {
     }
   }
 };
+
+export const increaseLikeCountAction = (id) => {
+  return async function(dispatch) {
+    try {
+      dispatch({ type: 'MAIN_PAGE_INCREASE_LIKE_REQUEST' });
+      const response = await API.posts.increasePostLike(id);
+      dispatch({ type: 'MAIN_PAGE_INCREASE_LIKE_SUCCESS', payload: response.data })
+    } catch(error) {
+      dispatch({ type: 'MAIN_PAGE_INCREASE_LIKE_FAIL' });
+    }
+  }
+};
+
+export const increaseDislikeCountAction = (id) => {
+  return async function(dispatch) {
+    try {
+      dispatch({ type: 'MAIN_PAGE_INCREASE_DISLIKE_REQUEST' });
+      const response = await API.posts.increasePostDislike(id);
+      dispatch({ type: 'MAIN_PAGE_INCREASE_DISLIKE_SUCCESS', payload: response.data })
+    } catch(error) {
+      dispatch({ type: 'MAIN_PAGE_INCREASE_DISLIKE_FAIL' });
+    }
+  }
+};
