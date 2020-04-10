@@ -23,6 +23,6 @@ export default function signInReducer(state = initState, action) {
         }
       });
     default:
-      return state;
+      return initState;
   }
 }

@@ -1,0 +1,24 @@
+.aboutWrapper {
+    width: 600px;
+    margin: 20px auto 15px;
+}
+
+.aboutTitle {
+    color: white;
+    padding: 10px 20px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.aboutContext {
+    margin: 0 auto 25px;
+    width: 450px;
+    background: #eee;
+    padding: 20px;
+    color: #181818;
+    border: 2px solid white;
+    border-radius: 6px;
+    word-wrap: break-word;
+}

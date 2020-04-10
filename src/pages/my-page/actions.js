@@ -38,14 +38,15 @@ export const changeFieldAction = ({ fieldId, value }) => ({
 });
 
 export const checkPasswordAction = (dataForm) => {
-
     return async function(dispatch) {
         try {
-            dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_REQUEST' });
+            dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_REQUEST'});
             const response = await API.user.getChangePassword(dataForm);
-            dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_SUCCESS', payload: response.data });
+
+            response.data.error ?
+                dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_FAIL', payload: response.data }) :
+                dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_SUCCESS', payload: response.data });
         } catch (error) {
-            console.log(error)
             dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_FAIL', payload: error.response.data });
         }
     }

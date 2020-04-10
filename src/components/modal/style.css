@@ -8,10 +8,8 @@
 }
 
 .modal {
-    width: 600px;
-    border-radius: 5px;
+    width: 300px;
+    border-radius: 6px;
     background: #fff;
-    margin: 100px auto;
-    height: 200px;
-
+    margin: 150px auto;
 }

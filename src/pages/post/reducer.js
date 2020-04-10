@@ -20,6 +20,11 @@ export default function postReducer(state = initState, action) {
         ...state,
         posts: state.posts.map(post => post.id === action.payload.id ? action.payload : post)
       };
+    case 'GET_DELETE_POST_LIKE_SUCCESS':
+      return {
+        ...state,
+        data: action.payload
+      };
     default:
       return state;
   }

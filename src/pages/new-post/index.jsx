@@ -26,9 +26,10 @@ class NewPost extends Component {
         <div className={style.row}>
           <div>Заголовок</div>
           <Input
-            id="title"
-            value={data.title}
-            onChange={this.onChangeData}
+              type="text"
+              id="title"
+              value={data.title}
+              onChange={this.onChangeData}
           />
         </div>
         <div className={style.row}>

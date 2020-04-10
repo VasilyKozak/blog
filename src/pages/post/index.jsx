@@ -13,10 +13,17 @@ class PostPage extends Component {
     const { id } = evt.target;
     this.props.increaseLikeCountAction(id);
   };
-
   onClickDislike = (evt) => {
     const { id } = evt.target;
     this.props.increaseDislikeCountAction(id);
+  };
+  onSubmitDeletePost = () => {
+    const { data } = this.props;
+    this.props.deletePostAction(data.id);
+  };
+  onSubmitChangePost = () => {
+    const { data } = this.props;
+    this.props.changePostAction(data.id);
   };
 
   render() {
@@ -31,14 +38,14 @@ class PostPage extends Component {
               <hr/>
               <div className={style.footer}>
                 <div className={style.leftCol}>
-                  <div id={data.id} onClick={this.onClickLike} className={style.like}><img alt={'like'} src={'../src/components/image/like.png'}/>{data.likesCount}</div>
-                  <div id={data.id} onClick={this.onClickDislike} className={style.dislike}><img alt={'dislike'} src={'../src/components/image/dislike.png'}/> {data.dislikesCount}</div>
+                  <div className={style.like}><img id={data.id} onClick={this.onClickLike} alt={'like'} src={'../src/components/image/like.png'}/>{data.likesCount}</div>
+                  <div className={style.dislike}><img id={data.id} onClick={this.onClickDislike} alt={'dislike'} src={'../src/components/image/dislike.png'}/> {data.dislikesCount}</div>
                 </div>
                 <div className={style.viewWrapper}><img alt={'eye'} src={'../src/components/image/eye.svg'}/>{data.viewsCount}<div className={style.eye}/></div>
               </div>
               <div className={style.buttonWrapper}>
-                <Button id="submit" onClick={this.onSubmit}>Удалить пост</Button>
-                <Button id="submit" onClick={this.onSubmit}>Изменить пост</Button>
+                <Button id="submit" onClick={this.onSubmitDeletePost}>Удалить пост</Button>
+                <Button id="submit" onClick={this.onSubmitChangePost}>Изменить пост</Button>
               </div>
             </div>
           : <div>loading...</div>

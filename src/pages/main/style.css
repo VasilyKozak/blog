@@ -1,5 +1,5 @@
 .postList {
-  width: 500px;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -17,6 +17,7 @@
   font-weight: bold;
   border-radius: 6px;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .linkTitle:hover {
@@ -37,15 +38,32 @@
   color: #181818;
   border: 2px solid white;
   border-radius: 6px;
+  word-wrap: break-word;
+  max-height: 180px;
+  overflow: hidden;
 }
 
 hr {
   width: 450px;
 }
-
-img {
+.imgLike {
+  transition: 0.2s;
   height: 2em;
   padding-right: 1em;
+}
+
+.imgLike:hover {
+  transform: scale(1.2);
+}
+
+.imgDislike {
+  transition: 0.2s;
+  height: 2em;
+  padding-right: 1em;
+}
+
+.imgDislike:hover {
+  transform: scale(1.2);
 }
 
 .leftCol {
@@ -58,7 +76,7 @@ img {
   flex-direction: row;
   cursor: pointer;
   color: #898989;
-  padding: 5px 10px 10px 10px;
+  padding: 5px 10px 10px 20px;
   align-items: center;
 }
 

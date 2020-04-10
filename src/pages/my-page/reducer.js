@@ -21,16 +21,11 @@ function merge(state, someObject) {
 
 function mapErrorFromServer(errorFromServer) {
     const errorCode = Object.keys(errorFromServer)[0];
-
     switch (errorCode) {
-        case 'Unauthorized':
-            return 'Авторизуйтесь';
         case 'isRequired':
             return 'Поле обязательно для заполнения!';
         case 'minLength':
             return 'Минимальная длина пароля 3 символа';
-        case 'error':
-            return 'Новый и текущий пароль совпадают!';
         default:
             return errorCode;
     }

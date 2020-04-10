@@ -24,21 +24,23 @@ class SignIn extends Component {
         <div>
           <div>
             <Input
-              id="login"
-              placeholder="Login"
-              value={this.props.dataForm.login}
-              onChange={this.props.changeFieldAction}
-            />
+                type="text"
+                id="login"
+                placeholder="Login"
+                value={this.props.dataForm.login}
+                onChange={this.props.changeFieldAction}
+              />
           </div>
         </div>
         <div>
           <div>
             <Input
-              id="password"
-              placeholder="Password"
-              value={this.props.dataForm.password}
-              onChange={this.props.changeFieldAction}
-            />
+                type="password"
+                id="password"
+                placeholder="Password"
+                value={this.props.dataForm.password}
+                onChange={this.props.changeFieldAction}
+              />
           </div>
         </div>
         <Button onClick={this.onSubmit}>Login</Button>

@@ -51,8 +51,8 @@ class MainPage extends Component {
                 <hr/>
               <div className={style.footer}>
                 <div className={style.leftCol}>
-                  <div id={postItem.id} onClick={this.onClickLike} className={style.like}><img alt={'like'} src={'src/components/image/like.png'}/>{postItem.likesCount}</div>
-                  <div id={postItem.id} onClick={this.onClickDislike} className={style.dislike}><img alt={'dislike'} src={'src/components/image/dislike.png'}/> {postItem.dislikesCount}</div>
+                  <div className={style.like}><img id={postItem.id} className={style.imgLike} onClick={this.onClickLike} alt={'like'} src={'src/components/image/like.png'}/>{postItem.likesCount}</div>
+                  <div className={style.dislike}><img id={postItem.id} className={style.imgDislike} onClick={this.onClickDislike} alt={'dislike'} src={'src/components/image/dislike.png'}/> {postItem.dislikesCount}</div>
                 </div>
                 <div className={style.viewWrapper}><img alt={'eye'} src={'src/components/image/eye.svg'}/>{postItem.viewsCount}<div className={style.eye}/></div>
               </div>

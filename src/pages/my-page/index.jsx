@@ -38,17 +38,19 @@ class MyPage extends Component {
             <div>
                 {data
                     ? <div className={style.myPageContainer} key={data.id}>
-                        <img ref='image' src={`/images/${data.avatar}`} className={style.avatarContainer}/>
-                        <ul className={style.wrapperUl}>
-                            <li>{`${data.firstName} ${data.lastName}`}</li>
-                            <li>{`Имя: ${data.firstName}`}</li>
-                            <li>{`Фамилия: ${data.lastName}`}</li>
-                            <li>{`Дата регистрации: ${data.registrationDate}`}</li>
-                            <li>{`E-mail: ${data.email}`}</li>
-                            <li>{`Количество постов: ${data.postsCount}`}</li>
-                            <li>{`Количество лайков: ${data.likesCount}`}</li>
-                            <li>{`Количество дизлайков: ${data.dislikesCount}`}</li>
-                        </ul>
+                        <div className={style.myPageUserInfo}>
+                            <img ref='image' src={data.avatar} className={style.avatarContainer}/>
+                            <ul className={style.wrapperUl}>
+                                <li className={style.firstLastName}>{`${data.firstName} ${data.lastName}`}</li>
+                                <li>{`Имя: ${data.firstName}`}</li>
+                                <li>{`Фамилия: ${data.lastName}`}</li>
+                                <li>{`Дата регистрации: ${data.registrationDate}`}</li>
+                                <li>{`e-mail: ${data.email}`}</li>
+                                <li>{`Количество постов: ${data.postsCount}`}</li>
+                                <li>{`Количество лайков: ${data.likesCount}`}</li>
+                                <li>{`Количество дизлайков: ${data.dislikesCount}`}</li>
+                            </ul>
+                        </div>
                         <div className={style.row}>
                             <Button id="submit" onClick={this.componentShowModal}>Изменить пароль</Button>
                         </div>
@@ -56,23 +58,27 @@ class MyPage extends Component {
                             isShowModal &&  <Modal>
                                 <div className={styleModal.wrapper}>
                                     <div className={styleModal.modal}>
-                                        <Button onClick={this.componentHideModal}>Close</Button>
+                                        <div className={style.close}>
+                                            <Button onClick={this.componentHideModal}>&times;</Button>
+                                        </div>
                                         <div>
                                         <div>
-                                            <div className={style.row}>
-                                                <div>
-                                                    <div>Текущий пароль</div>
+                                            <div>
+                                                <div className={style.input}>
                                                     <Input
+                                                        type="password"
                                                         id="currentPassword"
+                                                        placeholder="Current password"
                                                         value={this.props.dataForm.currentPassword}
                                                         onChange={this.props.changeFieldAction}
                                                         error={errors.currentPassword}
                                                     />
                                                 </div>
-                                                <div>
-                                                    <div>Новый пароль</div>
+                                                <div className={style.input}>
                                                     <Input
+                                                        type="password"
                                                         id="newPassword"
+                                                        placeholder="New password"
                                                         value={this.props.dataForm.newPassword}
                                                         onChange={this.props.changeFieldAction}
                                                         error={errors.newPassword}
@@ -81,9 +87,9 @@ class MyPage extends Component {
                                             </div>
                                             <div className={style.row}>
                                                 <Button id="submit" onClick={this.onSubmit}>Изменить</Button>
+                                                <Button onClick={this.componentHideModal}>Отмена</Button>
                                             </div>
                                         </div>
-                                        <Button onClick={this.componentHideModal}>Отмена</Button>
                                     </div>
                                     </div>
                                 </div>

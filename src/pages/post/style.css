@@ -1,6 +1,6 @@
 
 .postWrapper {
-  width: 500px;
+  width: 600px;
   border: 2px solid white;
   border-radius: 6px;
   margin: 20px auto 15px;
@@ -16,6 +16,7 @@
   border-radius: 6px;
   text-align: center;
   color: white;
+  word-wrap: break-word;
 }
 
 .postContent {
@@ -26,6 +27,7 @@
   color: #181818;
   border: 2px solid white;
   border-radius: 6px;
+  word-wrap: break-word;
 }
 
 hr {
@@ -65,7 +67,7 @@ img {
   flex-direction: row;
   align-items: center;
   color: #898989;
-  padding: 5px 25px 10px 10px;
+  padding: 5px 25px 10px 20px;
 }
 
 .footer {
@@ -80,3 +82,4 @@ img {
   margin-bottom: 20px;
   color: #898989;
 }
+

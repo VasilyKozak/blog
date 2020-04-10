@@ -70,6 +70,6 @@ export default function signInReducer(state = initState, action) {
         errors: getFormErrors(action.payload)
       };
     default:
-      return state;
+      return initState;
   }
 }

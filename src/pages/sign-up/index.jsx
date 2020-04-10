@@ -24,62 +24,66 @@ class SignUp extends Component {
 
   render() {
     const { errors } = this.props;
-
     return (
       <div className={style.signUpWrapper}>
         <div className={style.row}>
           <div>
             <Input
-              id="login"
-              placeholder="Login"
-              value={this.props.dataForm.login}
-              onChange={this.props.changeFieldAction}
-              onBlur={this.checkLogin}
-              error={errors.login}
+                type="text"
+                  id="login"
+                  placeholder="Login"
+                  value={this.props.dataForm.login}
+                  onChange={this.props.changeFieldAction}
+                  onBlur={this.checkLogin}
+                  error={errors.login}
             />
           </div>
         </div>
         <div className={style.row}>
           <div>
             <Input
-              placeholder="Firstname"
-              id="firstName"
-              value={this.props.dataForm.firstName}
-              onChange={this.props.changeFieldAction}
-              error={errors.firstName}
+                type="text"
+                id="firstName"
+                placeholder="Firstname"
+                value={this.props.dataForm.firstName}
+                onChange={this.props.changeFieldAction}
+                error={errors.firstName}
             />
           </div>
         </div>
         <div className={style.row}>
           <div>
             <Input
-              id="lastName"
-              placeholder="Lastname"
-              value={this.props.dataForm.lastName}
-              onChange={this.props.changeFieldAction}
-              error={errors.lastName}
+                type="text"
+                id="lastName"
+                placeholder="Lastname"
+                value={this.props.dataForm.lastName}
+                onChange={this.props.changeFieldAction}
+                error={errors.lastName}
             />
           </div>
         </div>
         <div className={style.row}>
           <div>
             <Input
-              id="email"
-              placeholder="Email"
-              value={this.props.dataForm.email}
-              onChange={this.props.changeFieldAction}
-              error={errors.email}
+                type="text"
+                id="email"
+                placeholder="Email"
+                value={this.props.dataForm.email}
+                onChange={this.props.changeFieldAction}
+                error={errors.email}
             />
           </div>
         </div>
         <div className={style.row}>
           <div>
             <Input
-              id="password"
-              placeholder="Password"
-              value={this.props.dataForm.password}
-              onChange={this.props.changeFieldAction}
-              error={errors.password}
+                type="password"
+                id="password"
+                placeholder="Password"
+                value={this.props.dataForm.password}
+                onChange={this.props.changeFieldAction}
+                error={errors.password}
             />
           </div>
         </div>

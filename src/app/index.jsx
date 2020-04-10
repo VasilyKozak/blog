@@ -8,7 +8,8 @@ import SignIn from 'src/pages/sing-in';
 import SignUp from 'src/pages/sign-up';
 import Post from 'src/pages/post';
 import NewPost from 'src/pages/new-post';
-import MyPage from 'src/pages/my-page'
+import MyPage from 'src/pages/my-page';
+import About from 'src/pages/about';
 import * as Actions from './actions';
 import './style.css';
 
@@ -25,7 +26,7 @@ class App extends Component {
           <Route path='/sign-in' exact={true} component={SignIn} />
           <Route path='/sign-up' exact={true} component={SignUp} />
           {this.props.user && <Route path='/new-post' exact={true} component={NewPost} />}
-          <Route path='/about' exact={true} render={() => <h1>About</h1>} />
+          <Route path='/about' exact={true} component={About} />
           <Route path='/post/:id' exact={true} component={Post} />
           {this.props.user && <Route path='/user/:id' exact={true} component={MyPage} />}
           <Route path='/' exact={true} component={MainPage} />

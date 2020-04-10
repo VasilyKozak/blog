@@ -16,6 +16,6 @@ export default function newPostReducer(state = initState, action) {
         }
       };
     default:
-      return state;
+      return initState;
   }
 }

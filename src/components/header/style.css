@@ -27,4 +27,6 @@
 
 .link:hover {
   color: #ffcc00;
+  transition: 0.2s;
+  transform: scale(1.1);
 }
