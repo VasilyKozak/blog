@@ -47,14 +47,21 @@ class MainPage extends Component {
                 <Link className={style.linkTitle} to={`/post/${postItem.id}`}>{postItem.title}</Link>
                 <hr/>
               </div>
+              <div className={style.authorInfo}>
+                <img className={style.authorAvatar} src={'http://school-blog.ru/images/' + postItem.author.avatar} alt={'avatar'}/>
+                <div className={style.authorPublishDate}>
+                  {'Опубликовал (а): ' + postItem.author.firstName + ' ' + postItem.author.lastName}<br/>
+                  {new Date(postItem.date).toLocaleDateString()}
+                </div>
+              </div>
                 <div className={style.postContent}>{postItem.content}</div>
                 <hr/>
               <div className={style.footer}>
                 <div className={style.leftCol}>
-                  <div className={style.like}><img id={postItem.id} className={style.imgLike} onClick={this.onClickLike} alt={'like'} src={'src/components/image/like.png'}/>{postItem.likesCount}</div>
-                  <div className={style.dislike}><img id={postItem.id} className={style.imgDislike} onClick={this.onClickDislike} alt={'dislike'} src={'src/components/image/dislike.png'}/> {postItem.dislikesCount}</div>
+                  <div className={style.leftCol}><img className={style.imgLike} id={postItem.id} onClick={this.onClickLike} alt={'like'} src={'../src/components/image/like.png'}/>{postItem.likesCount}</div>
+                  <div className={style.leftCol}><img className={style.imgDislike} id={postItem.id} onClick={this.onClickDislike} alt={'dislike'} src={'../src/components/image/dislike.png'}/>{postItem.dislikesCount}</div>
                 </div>
-                <div className={style.viewWrapper}><img alt={'eye'} src={'src/components/image/eye.svg'}/>{postItem.viewsCount}<div className={style.eye}/></div>
+                <div className={style.leftCol}><img className={style.viewWrapper} alt={'eye'} src={'../src/components/image/eye.svg'}/>{postItem.viewsCount}</div>
               </div>
             </div>
           );

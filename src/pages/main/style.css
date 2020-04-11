@@ -1,6 +1,6 @@
 .postList {
   width: 600px;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .postWrapper {
@@ -12,12 +12,43 @@
 
 .postTitle {
   background-color: #181818;
-  padding: 10px 20px 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 6px;
   text-align: center;
   word-wrap: break-word;
+}
+
+.authorAvatar {
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  transition: 0.2s;
+}
+
+.authorAvatar:hover {
+  transform: scale(2);
+}
+
+.authorPublishDate {
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 11px;
+}
+.authorInfo {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
+  padding-right: 73px;
+  align-items: center;
 }
 
 .linkTitle:hover {
@@ -46,6 +77,8 @@
 hr {
   width: 450px;
 }
+
+
 .imgLike {
   transition: 0.2s;
   height: 2em;
@@ -60,6 +93,7 @@ hr {
   transition: 0.2s;
   height: 2em;
   padding-right: 1em;
+  padding-left: 1em;
 }
 
 .imgDislike:hover {
@@ -69,36 +103,21 @@ hr {
 .leftCol {
   display: flex;
   flex-direction: row;
-}
-
-.like {
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-  color: #898989;
-  padding: 5px 10px 10px 20px;
+  justify-content: space-around;
   align-items: center;
-}
+  color: #eee;
 
-.dislike {
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-  color: #898989;
-  padding: 5px 10px 10px;
-  align-items: center;
 }
 
 .viewWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: #898989;
-  padding: 5px 25px 10px 10px;
+  transition: 0.2s;
+  height: 2em;
+  padding-right: 1em;
 }
 
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 10px 50px 20px;
 }

@@ -28,7 +28,7 @@ export function checkLoginAction(login) {
       const response = await API.user.checkLogin(login);
       dispatch({ type: 'SIGN_UP_CHECK_LOGIN_SUCCESS', payload: response.data });
     } catch (error) {
-
+      dispatch({ type: 'SIGN_UP_CHECK_LOGIN_FAIL'});
     }
   }
 }

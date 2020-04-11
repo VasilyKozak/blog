@@ -1,4 +1,5 @@
 import API from 'src/api';
+import {push} from "connected-react-router";
 
 export const getMyPageDataAction = (id) => {
     return async function(dispatch) {
@@ -43,9 +44,18 @@ export const checkPasswordAction = (dataForm) => {
             dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_REQUEST'});
             const response = await API.user.getChangePassword(dataForm);
 
-            response.data.error ?
-                dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_FAIL', payload: response.data }) :
+            if (response.data.error)
+            {
+                dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_BAD_REQUEST', payload: response.data })
+            } else
+            {
                 dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_SUCCESS', payload: response.data });
+                await API.user.signOut();
+                const actionPush = document.location.replace("/sign-in");
+                dispatch(actionPush);
+            }
+
+
         } catch (error) {
             dispatch({ type: 'CHANGE_PASSWORD_GET_DATA_FAIL', payload: error.response.data });
         }

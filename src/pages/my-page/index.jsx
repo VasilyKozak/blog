@@ -33,18 +33,17 @@ class MyPage extends Component {
 
     render() {
         const { data, isShowModal, errors } = this.props;
-        console.log(this.props)
         return (
             <div>
                 {data
                     ? <div className={style.myPageContainer} key={data.id}>
                         <div className={style.myPageUserInfo}>
-                            <img ref='image' src={data.avatar} className={style.avatarContainer}/>
+                            <img ref='image' src={'http://school-blog.ru/images/' + data.avatar} className={style.avatarContainer} alt='avatar'/>
                             <ul className={style.wrapperUl}>
                                 <li className={style.firstLastName}>{`${data.firstName} ${data.lastName}`}</li>
                                 <li>{`Имя: ${data.firstName}`}</li>
                                 <li>{`Фамилия: ${data.lastName}`}</li>
-                                <li>{`Дата регистрации: ${data.registrationDate}`}</li>
+                                <li>{`Дата регистрации: ${new Date(data.registrationDate).toLocaleDateString()}`}</li>
                                 <li>{`e-mail: ${data.email}`}</li>
                                 <li>{`Количество постов: ${data.postsCount}`}</li>
                                 <li>{`Количество лайков: ${data.likesCount}`}</li>
@@ -96,7 +95,12 @@ class MyPage extends Component {
                             </Modal>
                         }
                     </div>
-                    : <div>loading...</div>
+                    : <div className={style.ldsEllipsis}>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                    </div>
                 }
             </div>
         )

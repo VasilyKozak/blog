@@ -34,21 +34,33 @@ class PostPage extends Component {
           ? <div className={style.postWrapper}>
               <div className={style.postTitle}>{data.title}</div>
               <hr/>
+              <div className={style.authorInfo}>
+                <img className={style.authorAvatar} src={'http://school-blog.ru/images/' + data.author.avatar} alt={'avatar'}/>
+                <div className={style.authorPublishDate}>
+                  {'Опубликовал (а): ' + data.author.firstName + ' ' + data.author.lastName}<br/>
+                  {new Date(data.date).toLocaleDateString()}
+                </div>
+              </div>
               <div className={style.postContent}>{data.content}</div>
               <hr/>
               <div className={style.footer}>
                 <div className={style.leftCol}>
-                  <div className={style.like}><img id={data.id} onClick={this.onClickLike} alt={'like'} src={'../src/components/image/like.png'}/>{data.likesCount}</div>
-                  <div className={style.dislike}><img id={data.id} onClick={this.onClickDislike} alt={'dislike'} src={'../src/components/image/dislike.png'}/> {data.dislikesCount}</div>
+                  <div className={style.leftCol}><img className={style.imgLike} id={data.id} onClick={this.onClickLike} alt={'like'} src={'../src/components/image/like.png'}/>{data.likesCount}</div>
+                  <div className={style.leftCol}><img className={style.imgDislike} id={data.id} onClick={this.onClickDislike} alt={'dislike'} src={'../src/components/image/dislike.png'}/>{data.dislikesCount}</div>
                 </div>
-                <div className={style.viewWrapper}><img alt={'eye'} src={'../src/components/image/eye.svg'}/>{data.viewsCount}<div className={style.eye}/></div>
+                <div className={style.leftCol}><img className={style.viewWrapper} alt={'eye'} src={'../src/components/image/eye.svg'}/>{data.viewsCount}</div>
               </div>
               <div className={style.buttonWrapper}>
                 <Button id="submit" onClick={this.onSubmitDeletePost}>Удалить пост</Button>
                 <Button id="submit" onClick={this.onSubmitChangePost}>Изменить пост</Button>
               </div>
             </div>
-          : <div>loading...</div>
+          : <div className={style.ldsEllipsis}>
+              <div/>
+              <div/>
+              <div/>
+              <div/>
+            </div>
         }
       </div>
     )

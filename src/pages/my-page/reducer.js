@@ -33,6 +33,12 @@ function mapErrorFromServer(errorFromServer) {
 
 function getFormErrors(payload) {
     const errorKeys = Object.keys(payload);
+    if (errorKeys.toString() === 'error') {
+        return {
+            currentPassword: 'Пароль указан неверно',
+            newPassword: 'Пароль указан неверно'
+        }
+    }
     const errors = errorKeys.reduce(function(result, errorKey) {
         const errorFromServer = payload[errorKey];
         result[errorKey] = mapErrorFromServer(errorFromServer);
@@ -57,13 +63,29 @@ export default function myPageReducer(state = initState, action) {
         case 'HIDE_MODAL':
             return {
                 ...state,
-                isShowModal: false
+                isShowModal: false,
+                dataForm: {
+                    currentPassword: '',
+                    newPassword: ''
+                },
+                errors: {
+                    currentPassword: '',
+                    newPassword: ''
+                }
             };
         case 'CHANGE_PASSWORD_GET_DATA_FAIL':
             return {
                 ...state,
                 errors: getFormErrors(action.payload)
             };
+        case 'CHANGE_PASSWORD_GET_DATA_BAD_REQUEST':
+            return {
+                ...state,
+                errors: getFormErrors(action.payload)
+            };
+        case 'CHANGE_PASSWORD_GET_DATA_SUCCESS':
+            return initState;
+
         case 'CHECK_PASSWORD_DATA_FORM':
             return merge(state, {
                 dataForm: {

@@ -3,6 +3,11 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  min-width: 832px;
 }
 
 .wrapperUl {
@@ -10,6 +15,7 @@
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 50px;
 }
 
 .wrapperUl li {
